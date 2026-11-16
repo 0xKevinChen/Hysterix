@@ -1,0 +1,27 @@
+{
+  "name": "hystrix-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hystrix ($HSTX) — Non-custodial stealth transfers, gas-sponsored Veil Relay, and Blind Veil Passes on Solana.",
+  "type": "module",
+  "homepage": "https://hystrix.online",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hystrix-protocol/hystrix.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "node --test packages/sdk/test/*.test.ts",
+    "cli": "node packages/cli/src/hx.ts",
+    "relay:dev": "node packages/relay/src/server.ts",
+    "example:stealth": "node examples/01-stealth-transfer.ts",
+    "example:pass": "node examples/02-blind-veil-pass.ts",
+    "example:sweep": "node examples/03-split-sweep-plan.ts"
+  }
+}
